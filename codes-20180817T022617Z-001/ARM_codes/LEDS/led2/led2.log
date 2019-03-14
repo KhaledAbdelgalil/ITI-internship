@@ -1,0 +1,22 @@
+0	1	mikroCARM.exe -MSF -DBG -pLM3S9B95 -BIN -DL -SSA -O11111114 -fo16 -N"C:\Users\pc2\Desktop\embded\microCforArm\led2\led2.mcpar" -SP"C:\mikroC PRO for ARM\Defs\" -SP"C:\mikroC PRO for ARM\Uses\TI M3\" -SP"C:\Users\pc2\Desktop\embded\microCforArm\led2\" -IP"C:\mikroC PRO for ARM\Uses\TI M3\" -IP"C:\Users\pc2\Desktop\embded\microCforArm\led2\" "led2.c" "__Lib_Math.emcl" "__Lib_Delays.emcl" "__Lib_MathDouble.emcl" "__Lib_System.emcl" "__Lib_GPIO_9_1_AHB_Defs.emcl" "__Lib_GPIO_X_X_AHB.emcl"	 
+diagnostics: 0	122	Compilation Started	led2.c
+error: 2	324	Undeclared identifier 'GPIOA_ODR' in expression	led2.c
+warning: 2	1505	Suspicious pointer conversion	led2.c
+error: 3	324	Undeclared identifier 'GPIOB_ODR' in expression	led2.c
+warning: 3	1505	Suspicious pointer conversion	led2.c
+error: 4	324	Undeclared identifier 'GPIOC_ODR' in expression	led2.c
+warning: 4	1505	Suspicious pointer conversion	led2.c
+error: 5	324	Undeclared identifier 'GPIOD_ODR' in expression	led2.c
+warning: 5	1505	Suspicious pointer conversion	led2.c
+error: 6	324	Undeclared identifier 'GPIOE_ODR' in expression	led2.c
+warning: 6	1505	Suspicious pointer conversion	led2.c
+error: 7	324	Undeclared identifier 'GPIOA_ODR' in expression	led2.c
+error: 8	324	Undeclared identifier 'GPIOB_ODR' in expression	led2.c
+error: 9	324	Undeclared identifier 'GPIOC_ODR' in expression	led2.c
+error: 10	324	Undeclared identifier 'GPIOD_ODR' in expression	led2.c
+error: 11	324	Undeclared identifier 'GPIOE_ODR' in expression	led2.c
+error: 14	324	Undeclared identifier 'GPIOA_ODR' in expression	led2.c
+error: 14	402	; expected, but '~' found	led2.c
+error: 14	424	'}' expected ';' found	led2.c
+error: 20	424	'}' expected '}' found	led2.c
+error: 0	102	Finished (with errors): 07 Aug 2018, 15:29:13	led2.mcpar

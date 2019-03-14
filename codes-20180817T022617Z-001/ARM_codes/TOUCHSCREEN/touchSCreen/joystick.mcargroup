@@ -1,0 +1,7 @@
+[PROJECTS]
+Count=3
+Project0=..\microCforArm\ledON\led4.mcpar
+Project1=..\microCforArm\ledON\ledshift.mcpar
+Project2=joystick.mcpar
+[ActiveProject]
+Index=2

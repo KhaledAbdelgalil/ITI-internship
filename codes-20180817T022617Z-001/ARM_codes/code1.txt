@@ -1,0 +1,13 @@
+ void Init_ADC(void) {
+  ADC_Set_Input_Channel(_ADC_CHANNEL_8 | _ADC_CHANNEL_9);
+  ADC1_Init();
+  Delay_ms(100);
+}
+ 
+
+UART1_Init(115200);
+    Delay_ms(100);
+    UART1_Write(13);
+    UART1_Write(10);
+    Init_ADC();
+    UART1_Write_Text("star!");

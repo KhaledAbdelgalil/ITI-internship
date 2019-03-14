@@ -1,0 +1,5 @@
+[PROJECTS]
+Count=1
+Project0=..\big project\BigProject.mcpar
+[ActiveProject]
+Index=0

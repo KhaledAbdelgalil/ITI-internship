@@ -1,0 +1,266 @@
+//paint.c
+#include "type.h"
+void paint (void)
+{     u32 x2=500,y2=500;
+u32 xt,yt;
+u32 brushs=0;
+u32 brushm=0;
+u32 brushl=0;
+u32 erase=0;
+   char strX2[7];
+   char strY2[7];
+     TFT_Fill_Screen(CL_WHITE);
+   TFT_Set_Pen(CL_BLACK, 3);
+       TFT_Set_Font(TFT_defaultFont, CL_BLACK, FO_HORIZONTAL);
+
+
+     TFT_Rectangle(0,0, 42, 21);
+     TFT_Write_Text("Back", 2, 0);
+     TFT_Rectangle(0,21, 42, 42);
+     TFT_Write_Text("Erase", 2, 21);
+      
+      TFT_Set_Pen(CL_AQUA, 30);
+      TFT_Rectangle(60,0, 95, 30);
+      TFT_Set_Pen(CL_FUCHSIA, 30);
+      TFT_Rectangle(115,0, 150, 30);
+      TFT_Set_Pen(CL_GRAY,30);
+      TFT_Rectangle(170,0, 205, 30);
+      TFT_Set_Pen(CL_RED, 30);
+      TFT_Rectangle(225,0, 260, 30);
+      TFT_Set_Pen(CL_YELLOW, 30);
+      TFT_Rectangle(280,0, 315, 30);
+       TFT_Set_Pen(CL_BLACK, 3);
+      // void TFT_Circle(int x_center, int y_center, int radius);
+         TFT_Set_Pen(CL_BLACK, 3);
+        TFT_Rectangle(0,42, 42,75);
+        TFT_Set_Pen(CL_BLACK, 4);
+        TFT_Circle(21,58, 2);
+        TFT_Set_Pen(CL_BLACK, 3);
+         TFT_Rectangle(0,75, 42,108);
+         TFT_Set_Pen(CL_BLACK, 9);
+          TFT_Circle(21,91, 4);
+          TFT_Set_Pen(CL_BLACK, 3);
+          TFT_Rectangle(0,108, 42,141);
+          TFT_Set_Pen(CL_BLACK, 10);
+            TFT_Circle(21,124, 5);
+            TFT_Set_Pen(CL_BLACK, 3);
+           TFT_Rectangle(0,141, 42,174);
+           
+           TFT_Rectangle(10,150,30 ,160);
+          
+            TFT_Rectangle(0,174, 42,207);
+            
+           TFT_Line(10, 202, 30, 202);
+           TFT_Line(10,202, 20, 180);
+           TFT_Line(20, 180, 30, 202);
+                
+             TFT_Rectangle(0,207, 42,240);
+              TFT_Line(10, 210, 30, 232);
+             
+while(1)
+{
+
+    if(TP_TFT_Press_Detect())
+   {
+  // void TFT_Rectangle(int x_upper_left, int y_upper_left, int x_bottom_right, int y_bottom_right);
+      TP_TFT_Get_Coordinates(&x2,&y2);
+   /*   IntToStr(x2,strX2);
+      IntToStr(y2,strY2);
+      TFT_Write_Text(strX2,120,140);
+      TFT_Write_Text(strY2,120,120);
+       TFT_Fill_Screen(CL_GREEN);         */
+         if((x2>=50)&&(x2<=105)&&(y2<=30)&&(y2>=0))
+     {
+       TFT_Set_Pen(CL_AQUA, 10);
+     }
+         else if((x2>=105)&&(x2<=160)&&(y2<=30)&&(y2>=0))
+     {
+     TFT_Set_Pen(CL_FUCHSIA, 10);
+     }
+         else if((x2>=160)&&(x2<=215)&&(y2<=30)&&(y2>=0))
+     {
+     TFT_Set_Pen(CL_GRAY, 10);
+     }
+         else if((x2>=215)&&(x2<=270)&&(y2<=30)&&(y2>=0))
+     {
+     TFT_Set_Pen(CL_RED, 10);
+     }
+         else if((x2>=270)&&(x2<=330)&&(y2<=30)&&(y2>=0))
+     {
+     TFT_Set_Pen(CL_YELLOW, 10);
+     }
+
+
+           else if(((x2>=0)&&(x2<=42)&&(y2<=42)&&(y2>=21))|| ( erase==1))
+          {  erase=1;
+          if(TP_TFT_Press_Detect())
+            {
+             TP_TFT_Get_Coordinates(&x2,&y2);
+            if((!((x2>=0)&&(x2<=42)&&(y2<=75)&&(y2>=42)))&&(x2>52&&y2>52)  )
+             {
+
+             TP_TFT_Get_Coordinates(&x2,&y2);
+             TFT_Set_Pen(CL_WHITE, 10);
+             TFT_Circle(x2,y2, 4);
+             }
+            }
+          }
+      if(((x2>=0)&&(x2<=42)&&(y2<=75)&&(y2>=42))||(brushs==1))
+        {     
+       erase=0;
+        brushs=1;
+        brushm=0;
+        brushl=0;
+         if(TP_TFT_Press_Detect())
+            {
+             TP_TFT_Get_Coordinates(&x2,&y2);
+            if((!((x2>=0)&&(x2<=42)&&(y2<=75)&&(y2>=42)))&&(x2>52&&y2>52)  )
+             {
+             
+             TP_TFT_Get_Coordinates(&x2,&y2);
+
+             TFT_Circle(x2,y2, 1);
+             }
+            }
+
+
+        }
+
+                if(( (x2>=0)&&(x2<=42)&&(y2<=108)&&(y2>=75))||(brushm==1))
+        {
+         erase=0;
+        brushs=0;
+        brushm=1;
+        brushl=0;
+         if(TP_TFT_Press_Detect())
+            {
+             TP_TFT_Get_Coordinates(&x2,&y2);
+            if((!((x2>=0)&&(x2<=42)&&(y2<=108)&&(y2>=75)))&&(x2>52&&y2>52)  )
+             {
+
+             TP_TFT_Get_Coordinates(&x2,&y2);
+
+             TFT_Circle(x2,y2, 3);
+             }
+            }
+
+
+        }
+
+       if(((x2>=0)&&(x2<=42)&&(y2<=141)&&(y2>=108))||(brushl==1))
+        {
+         erase=0;
+        brushs=0;
+        brushm=0;
+        brushl=1;
+         if(TP_TFT_Press_Detect())
+            {
+             TP_TFT_Get_Coordinates(&x2,&y2);
+            if((!( (x2>=0)&&(x2<=42)&&(y2<=141)&&(y2>=108)))&&(x2>52&&y2>52)  )
+             {
+
+             TP_TFT_Get_Coordinates(&x2,&y2);
+
+             TFT_Circle(x2,y2, 4);
+             }
+            }
+
+
+        }
+
+             else if((x2>=0)&&(x2<=42)&&(y2<=174)&&(y2>=141))
+        {
+         erase=0;
+        brushs=0;
+        brushm=0;
+        brushl=0;
+         if(TP_TFT_Press_Detect())
+            {     Delay_ms(200);
+             TP_TFT_Get_Coordinates(&x2,&y2);
+             if((!((x2>=0)&&(x2<=42)&&(y2<=174)&&(y2>=141)))&&(x2>52&&y2>52))
+                {
+             TP_TFT_Get_Coordinates(&x2,&y2);
+              TFT_Rectangle(x2,y2,x2+70 ,y2+40);
+               xt=x2;
+             yt=y2;
+              }      }
+                    if(TP_TFT_Press_Detect())
+             TP_TFT_Get_Coordinates(&x2,&y2);
+             if((x2>=0)&&(x2<=42)&&(y2<=42)&&(y2>=21)&&xt>42&&yt>42)
+             {
+              TFT_Set_Pen(CL_WHITE, 3);
+           TFT_Rectangle(xt,yt,xt+40 ,yt+30);
+             }
+        }
+
+             else if((x2>=0)&&(x2<=42)&&(y2<=207)&&(y2>=174))
+        {          brushs=0;
+        brushm=0;
+        brushl=0;
+         erase=0;
+        if(TP_TFT_Press_Detect())
+            {     Delay_ms(200);
+             TP_TFT_Get_Coordinates(&x2,&y2);
+             if((!((x2>=0)&&(x2<=42)&&(y2<=207)&&(y2>=174)))&&(x2>52&&y2>52))
+               {
+
+           TP_TFT_Get_Coordinates(&x2,&y2);
+           TFT_Line(x2+10, y2+62, x2+50,y2+ 62);
+           TFT_Line(x2+10,y2+62, x2+25, y2);
+           TFT_Line(x2+25, y2, x2+50,y2+ 62);
+            xt=x2;
+             yt=y2;
+           }  }
+                     if(TP_TFT_Press_Detect())
+             TP_TFT_Get_Coordinates(&x2,&y2);
+             if((x2>=0)&&(x2<=42)&&(y2<=42)&&(y2>=21)&&xt>42&&yt>42)
+             {
+              TFT_Set_Pen(CL_WHITE, 3);
+           TFT_Line(xt+10, yt+42, xt+30,yt+ 42);
+           TFT_Line(xt+10,yt+42, xt+20, yt);
+           TFT_Line(xt+20, yt, xt+30,yt+ 42);
+             }
+        }
+
+             else if((x2>=0)&&(x2<=42)&&(y2<=240)&&(y2>=207))
+        {         brushs=0;
+        brushm=0;
+        brushl=0;
+         erase=0;
+       if(TP_TFT_Press_Detect())
+            {     Delay_ms(200);
+             TP_TFT_Get_Coordinates(&x2,&y2);
+             if((!((x2>=0)&&(x2<=42)&&(y2<=240)&&(y2>=207)))&&(x2>52&&y2>52))
+             {
+           TP_TFT_Get_Coordinates(&x2,&y2);
+        TFT_Line(x2, y2, x2+40, y2+40);
+        xt=x2;
+             yt=y2;
+        }
+        }
+                   if(TP_TFT_Press_Detect())
+             TP_TFT_Get_Coordinates(&x2,&y2);
+             if((x2>=0)&&(x2<=42)&&(y2<=42)&&(y2>=21)&&xt>42&&yt>42)
+             {
+              TFT_Set_Pen(CL_WHITE, 3);
+           TFT_Line(xt+10, yt+10, xt+30, yt+30);
+             }
+        
+          }
+
+
+   }
+    if((x2>=0)&&(x2<=42)&&(y2<=21)&&(y2>=0))
+   break;
+
+      //void TFT_Set_Pen(unsigned int pen_color, char pen_width);
+    //COLOR
+
+}
+
+     TFT_Fill_Screen(CL_GREEN);
+   TFT_Set_Pen(CL_WHITE, 3);
+      TFT_Set_Font(TFT_defaultFont, CL_WHITE, FO_HORIZONTAL);
+
+
+}

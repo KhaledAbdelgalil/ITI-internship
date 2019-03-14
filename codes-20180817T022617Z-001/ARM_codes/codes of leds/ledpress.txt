@@ -1,0 +1,25 @@
+#define delay_time 50
+  #define active_state 1
+void main() 
+{
+char value=0;
+GPIO_Digital_Output(&GPIOD_ODR,_GPIO_PINMASK_ALL);
+GPIO_Digital_Input(&GPIOA_IDR,_GPIO_PINMASK_ALL);
+GPIOD_ODR=0;
+
+while(1)
+{
+   value=Button(&GPIOA_IDR,0,delay_time , active_state);
+   if(value==255)
+    GPIOD_ODR=~ GPIOD_ODR  ;
+
+
+}
+
+
+
+
+              
+              
+              
+}

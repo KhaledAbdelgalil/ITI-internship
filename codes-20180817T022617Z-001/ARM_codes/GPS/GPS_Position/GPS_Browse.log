@@ -1,0 +1,6 @@
+0	1	mikroCARM.exe -MSF -DBG -pSTM32F407VG -BIN -LHF -DL -SSA -O11111114 -fo16 -N"C:\Users\ap1\Desktop\Embedded Magdy\GPS\GPS_Browse.mcpar" -SP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for ARM\Defs\" -SP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for ARM\Uses\ST M4\" -SP"C:\Users\ap1\Desktop\Embedded Magdy\GPS\" -IP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for ARM\Uses\ST M4\" -IP"C:\Users\ap1\Desktop\Embedded Magdy\GPS\" -IP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for ARM\Uses\TI M3\" "GPS_Browse.c" "__Lib_Math.emcl" "__Lib_MathDouble.emcl" "__Lib_Delays.emcl" "__Lib_System_4XX.emcl" "__Lib_GPIO_32F4xx_Defs.emcl" "__Lib_GPIO_32F4xx.emcl" "__Lib_CString.emcl" "__Lib_SoftUART.emcl" "__Lib_UART_123_45_6.emcl" "__Lib_TFT.emcl" "__Lib_TFT_Defs.emcl" "__Lib_TouchPanel_TFT.emcl"	 
+diagnostics: 0	122	Compilation Started	resources.h
+diagnostics: 109	123	Compiled Successfully	GPS_Browse.c
+diagnostics: 0	127	All files Compiled in 437 ms	 
+error: 0	434	Demo Limit	Demo Limit
+error: 0	102	Finished (with errors): 16 Aug 2018, 15:32:19	GPS_Browse.mcpar
